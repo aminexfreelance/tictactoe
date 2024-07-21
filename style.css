@@ -1,48 +1,127 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
 }
 
-.calculator {
-    width: 200px;
-    margin: 100px auto;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.container {
+  text-align: center;
 }
 
-#display {
-    width: 94%;
-    padding: 5px;
-    margin-bottom: 10px;
-    font-size: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+h1 {
+  margin-top: 0px;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #3498db;
 }
 
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  margin-top: 10px;
 }
 
-button {
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #3498db;
-    color: #fff;
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #2c3e50;
+  border: 2px solid #34495e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
-    background-color: #2980b9;
+.cell:hover {
+  background-color: #3498db;
+  transform: scale(1.05);
 }
 
-button:active {
-    background-color: #1f618d;
+.cell.X {
+  color: #e74c3c;
+}
+
+.cell.O {
+  color: #2ecc71;
+}
+
+.message {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #3498db;
+}
+
+.restart-btn {
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.restart-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Styles for Scoreboard */
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2c3e50;
+  padding: 10px;
+  border: 2px solid #34495e;
+  border-radius: 8px;
+  width: 301px;
+  margin-top: 10px;
+}
+
+.score {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.score span {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.score span#playerXScore,
+.score span#playerOScore {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3498db; /* Player X color */
+}
+
+.reset-score-btn,
+.restart-btn {
+  margin-top: 5px;
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Make buttons full width */
+  box-sizing: border-box; /* Ensure padding and border don't affect width */
+}
+
+.reset-score-btn:hover,
+.restart-btn:hover {
+  background-color: #2980b9;
 }
